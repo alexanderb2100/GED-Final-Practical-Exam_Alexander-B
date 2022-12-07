@@ -1,25 +1,9 @@
-# GED Final
-
-## How to Play:
-- WASD to move
-- Mouse to look around
-- SPACE to jump
-- LMB to attack
-- ESC to quit game
-
-## Build:
-You can fine the exe file in the published release.
-
-## Scripts:
-- EnemyController.cs : used to control enemy's actions such as patrolling and attacking
-- GameControls.cs : used for defining input actions for player such as moving
-- GameplayManager.cs : used to hide the mouse cursor in play mode
-- PlayerController.cs : used to control player's actions such as move, attack, rotate, and jump
-- PlayerInputController.cs : global access to Game input actions using singleton pattern
-- PlayerSword.cs : used to manage player's sword collision with enemies
-
-## Notes:
-A player, two enemies, and platforms are placed in the scene. Enemies are able to move around and attack using AI. 
-Some animations were added to all the characters.
-One singleton pattern is used in PlayerInputController.cs. No other design patterns or elements such as collectables and win/lose condition were implemented.<br />
-3D Model Resource: https://quaternius.com/packs/cyberpunkgamekit.html
+1. Object pooling was implemented in the TA’s starter code by having the enemies in an
+object pool where once the last remaining enemy is killed, the one that was killed first
+(which returned to the pool) re-spawns. This makes it so that there are constant waves
+of enemies that spawn without creating new objects each time, but rather re-using the
+same two enemies that are in the object pool. This optimizes the scene because creating
+and destroying new enemies each time the player gets a kill would significantly slow
+down the game over time. With the implementation of object pooling, it becomes much
+more efficient.
+2.
